@@ -4,7 +4,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 First, run the the middlewar:
 
-```node index.js
+```
+node index.js
+
 ```
 and run the application in the frontend
 

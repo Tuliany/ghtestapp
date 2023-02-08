@@ -4,9 +4,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 First, run the the middlewar:
 
-```
-node index.js
-
+```node index.js
+// If you are on a MacBook, you might need to turn off the airplay. 
+// System preference >> Sharing >> [] Airplay Receiver
 ```
 and run the application in the frontend
 
@@ -17,6 +17,23 @@ yarn dev
 # or
 pnpm dev
 ```
+
+Dependencies
+````
+npm install @mui/material @emotion/react @emotion/styled
+# or
+yarn add @mui/material @emotion/react @emotion/styled
+
+npm install @fontsource/roboto
+# or
+yarn add @fontsource/roboto
+
+npm install @mui/icons-material
+# or
+yarn add @mui/icons-material
+
+````
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

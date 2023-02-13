@@ -1,42 +1,13 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { Inter } from '@next/font/google';
 import styles from '@/styles/Home.module.css';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import Logo from '../public/assets/logo.png';
 import { MenuBar } from '../components/Menu/MenuBar';
-
-const inter = Inter({ subsets: ['latin'] });
-const url = 'http://localhost:7000/';
-interface Data {
-  content: {
-    title: string;
-    subTitle: string;
-  };
-  alias: string;
-}
+import useData from './api/data';
 
 export default function Home() {
-  const [data, setData] = useState<Data | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+ const data = useData()
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await axios.get(url);
-        setData(response.data);
-        setError(null);
-      } catch (err) {
-        setError(error);
-        setData(null);
-      } finally {
-        setLoading(false);
-      }
-    };
-    getData();
-  }, []);
 
   return (
     <>

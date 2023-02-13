@@ -6,9 +6,8 @@ import { MenuBar } from '../components/Menu/MenuBar';
 import useData from './api/data';
 
 export default function Home() {
- const data = useData()
-
-
+  const data = useData()
+  
   return (
     <>
       <Head>

@@ -1,33 +1,26 @@
 import PropTypes from "prop-types";
 import { Box } from "@mui/material";
 import { Home, RssFeed, Contacts, ManageSearch } from "@mui/icons-material/";
-
+import useData from "../../pages/api/data";
 import { NavItem } from "./NavItem";
 
-const items = [
-  {
-    href: "/",
-    icon: <Home />,
-    title: "Home",
-  },
-  {
-    href: "/blog",
-    icon: <RssFeed />,
-    title: "Blog",
-  },
-  {
-    href: "/contact",
-    icon: <Contacts />,
-    title: "Contact",
-  },
-  {
-    href: "/search",
-    icon: <ManageSearch />,
-    title: "Search",
-  },
-];
-
 export const MenuBar = () => {
+  const data = useData();
+  let items = [];
+
+  if (data) {
+    const navigationPath = data.navigation.mainMenu;
+    console.log(navigationPath);
+    navigationPath.forEach((item) => {
+      console.log(item.url);
+      items.push({
+        href: item.url,
+        icon: null,
+        title: item.name,
+      });
+    });
+  }
+  
   return (
     <>
       <Box

@@ -1,4 +1,3 @@
-import NextLink from "next/link";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 import { Box, Button, ListItem } from "@mui/material";
@@ -18,9 +17,9 @@ export const NavItem = (props) => {
         px: 2,
       }}
       {...others}>
-      <NextLink href={href} passHref>
         <Button
           component="a"
+          href={href}
           startIcon={icon}
           disableRipple
           sx={{
@@ -42,7 +41,6 @@ export const NavItem = (props) => {
           }}>
           <Box sx={{ flexGrow: 1 }}>{title}</Box>
         </Button>
-      </NextLink>
     </ListItem>
   );
 };
